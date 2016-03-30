@@ -1,0 +1,103 @@
+将play项目打成war包步骤
+
+ Play!framework 项目部署到Tomcat
+
+Play Framework有自带的服务器，也可部署到其他服务器上。这里讲解下如何将Play的项目部署到Tomcat。
+
+1.准备war包
+
+首先进入play目录：
+
+比如我的:
+
+ 
+
+cd C:\play-1.2.5\play-1.2.5
+
+ 
+
+然后利用命令：play war [项目所在绝对路径] -o [生成的war包名称（包括路径）]
+
+这里要注意生成的war包最好指定到其他目录，比如C盘根目录。
+
+比如我的项目：
+
+ 
+
+C:\play-1.2.5\play-1.2.5>play war C:\msysgit\msysgit\git\gitrep7\applyful\module
+s\applyful.appserver_v2 -o c:\applyful.war
+~        _            _
+~  _ __ | | __ _ _  _| |
+~ | '_ \| |/ _' | || |_|
+~ |  __/|_|\____|\__ (_)
+~ |_|            |__/
+~
+~ play! 1.2.5, http://www.playframework.org
+~
+CompilerOracle: exclude jregex/Pretokenizer.next
+Listening for transport dt_socket at address: 8000
+17:19:22,085 INFO  ~ Starting C:\msysgit\msysgit\git\gitrep7\applyful\modules\ap
+plyful.appserver_v2
+17:19:22,085 INFO  ~ Module japid is available (C:\msysgit\msysgit\git\gitrep7\a
+pplyful\modules\applyful.appserver_v2\modules\japid-0.9.4.3)
+17:19:22,085 INFO  ~ Module morphia is available (C:\msysgit\msysgit\git\gitrep7
+\applyful\modules\applyful.appserver_v2\modules\morphia-1.2.9a)
+17:19:22,101 INFO  ~ Module press is available (C:\msysgit\msysgit\git\gitrep7\a
+pplyful\modules\applyful.appserver_v2\modules\press-1.0.25)
+17:19:24,191 INFO  ~ JapidPlugin.onload().
+17:19:24,191 INFO  ~ [Japid] play in DEV mode. Detecting changes...
+[Japid] Processing 15 templates in directory tree: C:\msysgit\msysgit\git\gitrep
+7\applyful\modules\applyful.appserver_v2\app
+[Japid] Transforming template: japidviews\OnboardingController\step2.html to: st
+ep2.java
+[Japid] Transforming template: japidviews\OnboardingController\step5.html to: st
+ep5.java
+[Japid] Transforming template: japidviews\OnboardingController\step4.html to: st
+ep4.java
+[Japid] Transforming template: japidviews\PageController\about.html to: about.ja
+va
+[Japid] Transforming template: japidviews\SchoolController\page_more_info.html t
+o: page_more_info.java
+[Japid] Transforming template: japidviews\Landing\index.html to: index.java
+[Japid] Transforming template: japidviews\PageController\createPage.html to: cre
+atePage.java
+[Japid] Transforming template: japidviews\OnboardingController\finishedProfile.h
+tml to: finishedProfile.java
+[Japid] Transforming template: japidviews\_tags\pagelike.html to: pagelike.java
+[Japid] Transforming template: japidviews\AccountController\signupresult.html to
+: signupresult.java
+[Japid] Transforming template: japidviews\_layouts\step_layout.html to: step_lay
+out.java
+[Japid] Transforming template: japidviews\_layouts\new_signupresult_layout.html
+to: new_signupresult_layout.java
+[Japid] Transforming template: japidviews\_layouts\signupresult_layout.html to:
+signupresult_layout.java
+[Japid] Transforming template: japidviews\OnboardingController\step3.html to: st
+ep3.java
+[Japid] Transforming template: japidviews\OnboardingController\step1.html to: st
+ep1.java
+17:19:24,847 INFO  ~ Precompiling ...
+17:19:44,440 INFO  ~ Done.
+~ Packaging current version of the framework and the application to c:\applyful.
+war ...
+~ Done !
+~
+~ You can now load c:\applyful.war as a standard WAR into your servlet container
+
+~ You can't use play standard commands to run/stop/debug the WAR application...
+~ ... just use your servlet container commands instead
+~
+~ Have fun!
+~
+
+C:\play-1.2.5\play-1.2.5>mongod
+
+ 
+
+ 
+
+2.  部署到Tomcat
+
+将得到的war文件夹里的WEB-INF文件复制到Tomcat目录下的ROOT下，直接覆盖。
+
+启动Tomcat即可访问：http://localhost:8080/
