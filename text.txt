@@ -280,3 +280,21 @@ create database  b---b为数据库名
 user b
 
 source    XX.sql --将其拖入此地
+
+
+
+
+用命令行将项目打成war包命令
+
+先进入到该项目中:
+比如:
+
+
+cd c:
+
+c:\>cd job
+
+c:\job>cd Report2
+
+c:\job\Report2\jjar cvf xxx.war *
+
