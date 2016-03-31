@@ -265,3 +265,18 @@ Tomcat在Linux上的安装与配置
        <welcome-file>index.htm</welcome-file>
        <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
+
+
+
+
+用命令将数据库导入:
+
+mysql -uroot -proot
+
+show databases
+
+create database  b---b为数据库名
+
+user b
+
+source    XX.sql --将其拖入此地
