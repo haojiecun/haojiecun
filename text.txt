@@ -296,5 +296,14 @@ c:\>cd job
 
 c:\job>cd Report2
 
-c:\job\Report2\jjar cvf xxx.war *
+c:\job\Report2\jar cvf xxx.war */ .   ---*代表所有文件夹下
 
+
+
+给用户root赋权限 
+
+mysql -u root -pPasswd
+
+　　mysql >grant all privileges on *.* to root@"%" identified by "Passwd"；
+
+　　mysql >flush privileges；
